@@ -1,0 +1,83 @@
+/* header .logo
+{
+  color: green;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-left: 10px;
+} */
+/* header{
+  width: 99%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  background-color:  #ffeecc;
+  position: fixed;
+  box-shadow: 0 -5px 15px #000;
+} */
+  /* header ul{
+    width: 75%;
+    height: 100%;
+    text-align: right;
+  }
+  header li{
+    display: inline-block;
+    margin-right: 40px;
+    color: green;
+    font-size: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+  } */
+#logo{
+  color: green;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.navbar{
+    background-color:  #e2bca3 ;
+}
+body{
+  background-color: #f9f3ef !important;
+}
+
+.container {
+  position: relative !important;
+  text-align: center !important;
+  color: white !important;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute !important;
+  bottom: 8px !important;
+  left: 16px !important;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute !important;
+  top: 8px !important;
+  left: 16px !important;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute !important;
+  top: 8px !important;
+  right: 16px !important;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute !important;
+  bottom: 8px !important;
+  right: 16px !important;
+}
+
+/* Centered text */
+.centered {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}

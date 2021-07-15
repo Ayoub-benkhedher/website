@@ -40,12 +40,36 @@ body{
   background-color: #f9f3ef !important;
 }
 
-.container {
+/* .container {
   position: relative !important;
   text-align: center !important;
   color: white !important;
+} */
+html, body, .container {
+  height: 100%;
 }
 
+body{
+  background-image: url("assets/img2.jpeg");
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-color: #e2bca3;
+
+}
+.container {
+  display: table;
+  padding-top: 80px;
+  width: 100%;
+}
+.content{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  top: -20%
+}
 
 /* Centered text */
 .centered {

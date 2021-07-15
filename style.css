@@ -40,11 +40,7 @@ body{
   background-color: #f9f3ef !important;
 }
 
-.container {
-  position: relative !important;
-  text-align: center !important;
-  color: white !important;
-}
+
 
 
 /* Centered text */
@@ -52,5 +48,10 @@ body{
   position: absolute !important;
   top: 50% !important;
   left: 50% !important;
-  transform: translate(-50%, -50%) !important;
+  transform: translate(-50%, 50%) !important;
+}
+.text{
+  position: absolute;
+    top: 40%;
+    left: 40%
 }

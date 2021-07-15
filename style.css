@@ -35,6 +35,7 @@
 }
 .navbar{
     background-color:  #e2bca3 ;
+    opacity: 0.95;
 }
 body{
   background-color: #f9f3ef !important;
@@ -59,11 +60,10 @@ body{
   background-color: #e2bca3;
 
 }
-.container {
+ .container {
   display: table;
-  padding-top: 80px;
   width: 100%;
-}
+} 
 .content{
   display: table-cell;
   vertical-align: middle;

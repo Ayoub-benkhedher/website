@@ -49,6 +49,7 @@ html, body, .container {
   height: 100%;
 }
 
+
 body{
   background-image: url("assets/img2.jpeg");
   background-position: center center;
@@ -76,5 +77,10 @@ body{
   position: absolute !important;
   top: 50% !important;
   left: 50% !important;
-  transform: translate(-50%, -50%) !important;
+  transform: translate(-50%, 50%) !important;
+}
+.text{
+  position: absolute;
+    top: 40%;
+    left: 40%
 }

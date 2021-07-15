@@ -46,33 +46,6 @@ body{
   color: white !important;
 }
 
-/* Bottom left text */
-.bottom-left {
-  position: absolute !important;
-  bottom: 8px !important;
-  left: 16px !important;
-}
-
-/* Top left text */
-.top-left {
-  position: absolute !important;
-  top: 8px !important;
-  left: 16px !important;
-}
-
-/* Top right text */
-.top-right {
-  position: absolute !important;
-  top: 8px !important;
-  right: 16px !important;
-}
-
-/* Bottom right text */
-.bottom-right {
-  position: absolute !important;
-  bottom: 8px !important;
-  right: 16px !important;
-}
 
 /* Centered text */
 .centered {

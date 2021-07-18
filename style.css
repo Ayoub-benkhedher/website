@@ -82,3 +82,28 @@ body{
   width: 70%;
   opacity: 0.8;
 }
+.social
+{
+  position: relative;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px 0px 700px;
+}
+.social li
+{
+  list-style: none;
+}
+.social li a
+{
+  display: inline-block;
+  margin-left:20px;
+  filter: invert(0.2);
+  transform: scale(0.5);
+  transition: 0.5s;
+}
+.social li a:hover
+{
+  transform: scale(0.5) translateY(-15px);
+}

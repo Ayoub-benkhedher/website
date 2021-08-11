@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+	include("connection.php");
+	include("functions.php");
+
+	$user_data = check_login($con);
+
+?>
+ <!DOCTYPE html>
 
 <head>
   <title>organicproduce.com</title>
@@ -61,7 +70,7 @@
     <section class="content">
       <h3>We provide local produce</h3>
       <h4>To local needs</h4>
-      <a href="#" id="getstarted" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Get
+      <a href="hello.php" id="getstarted" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Get
         Started</a>
       </section>
   </main>

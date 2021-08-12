@@ -7,4 +7,4 @@ $dbName= "webd2m_abenkhedher";
 if(!$conn = mysqli_connect($dbhost, $dbUser, $dbPassword, $dbName)){
   die("failed to connect!");
 }
- ?>
+?>

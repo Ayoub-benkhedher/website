@@ -4,7 +4,7 @@ session_start();
 	include("connection.php");
 	include("functions.php");
 
-	$user_data = check_login($con);
+	// $user_data = check_login($conn);
 
 ?>
  <!DOCTYPE html>
@@ -21,7 +21,7 @@ session_start();
 <body>
   <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index.php">
         <img src="assets/logo.png" alt="" width=auto height=auto>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@ session_start();
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Order</a>

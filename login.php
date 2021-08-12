@@ -5,41 +5,48 @@ session_start();
 	include("connection.php");
 	include("functions.php");
 
-
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		//something was posted
 		$user_name = $_POST['user_name'];
+		// echo $user_name;
 		$password = $_POST['password'];
-
+		// echo $password;
 		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
 		{
 
 			//read from database
-			$query = "select * from users where user_name = '$user_name' limit 1";
-			$result = mysqli_query($con, $query);
+			$query = "select * from users where user_name = '$user_name' and password = '$password' limit 1";
+			$result = mysqli_query($conn, $query);
 
 			if($result)
 			{
 				if($result && mysqli_num_rows($result) > 0)
 				{
-
 					$user_data = mysqli_fetch_assoc($result);
+					$_SESSION['user_id'] = $user_data['user_id'];
+					header("Location: index.php");
+					die;
 
 					if($user_data['password'] === $password)
 					{
-
 						$_SESSION['user_id'] = $user_data['user_id'];
 						header("Location: index.php");
 						die;
 					}
 				}
+				// else{
+				// 	echo "7keya2";
+				//
+				// }
 			}
-
-			echo "wrong username or password!";
+			echo '<span style="color:red;">wrong username or password!</span>';
+			//
+			// echo "wrong username or password!";
 		}else
 		{
-			echo "wrong username or password!";
+			echo '<span style="color:red;">wrong username or password!</span>';
+			// echo "wrong username or password!";
 		}
 	}
 
@@ -63,7 +70,7 @@ session_start();
 <body>
   <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="index.php">
         <img src="assets/logo.png" alt="" width=auto height=auto>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,7 +79,7 @@ session_start();
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Order</a>
@@ -101,7 +108,7 @@ session_start();
         </form>
         <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="login.html">Login</a>
+          <a class="nav-link" href="login.php">Login</a>
         </li>
       </ul>
       </div>
@@ -119,25 +126,25 @@ session_start();
 				</div>
 			</div>
 			<div class="card-body">
-				<form>
+				<form action="" method="post">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="user_name">
+						<input type="text" class="form-control" placeholder="username" name="user_name">
 
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password">
+						<input type="password" class="form-control" placeholder="password" name="password">
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Remember Me
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Login" class="btn float-right login_btn">
+						<input type="submit" value="Login"  class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>

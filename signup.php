@@ -8,15 +8,17 @@ session_start();
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		//something was posted
-		$user_name = $_POST['user_name'];
+		$email = $_POST['email'];
 		$password = $_POST['password'];
+		$first_name = $_POST['first_name'];
+		$last_name = $_POST['last_name'];
 
-		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
+		if(!empty($email) && !empty($password) && !is_numeric($email) && !empty($first_name) && !empty($last_name) && !is_numeric($first_name) && !is_numeric($last_name))
 		{
 
 			//save to database
 			// $user_id = random_num(20);
-			$query = "insert into users (user_name,password) values ('$user_name','$password')";
+			$query = "insert into users (email,password,first_name,last_name) values ('$email','$password','$first_name','$last_name')";
 
 			mysqli_query($conn, $query);
 
@@ -108,7 +110,7 @@ session_start();
 					 <div class="input-group-prepend">
 						 <span class="input-group-text"><i class="fas fa-inbox"></i></span>
 					 </div>
-					 <input type="email" class="form-control" placeholder="email" name="user_name">
+					 <input type="email" class="form-control" placeholder="email" name="email">
 
 				 </div>
 
@@ -122,13 +124,13 @@ session_start();
 					 <div class="input-group-prepend">
 						 <span class="input-group-text"><i class="fas fa-signature"></i></span>
 					 </div>
-					 <input type="password" class="form-control" placeholder="firstname" name="first_name">
+					 <input type="text" class="form-control" placeholder="firstname" name="first_name">
 				 </div>
 				 <div class="input-group form-group">
 					 <div class="input-group-prepend">
 						 <span class="input-group-text"><i class="fas fa-signature"></i></span>
 					 </div>
-					 <input type="password" class="form-control" placeholder="lastname" name="last_name">
+					 <input type="text" class="form-control" placeholder="lastname" name="last_name">
 				 </div>
 				 <!-- <div class="row align-items-center remember">
 					 <input type="checkbox">Remember Me

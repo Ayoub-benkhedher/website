@@ -1,11 +1,13 @@
 <?php
 session_start();
-
 	include("connection.php");
 	include("functions.php");
 
+	// echo("<script>console.log('PHP: test index page');</script>");
 	// $user_data = check_login($conn);
-
+// if(!empty($_SESSION['email'])){
+// 	echo $_SESSION['email'];
+// }
 ?>
  <!DOCTYPE html>
 
@@ -57,13 +59,28 @@ session_start();
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
+				<?php if(empty($_SESSION['email'])){ ?>
         <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="login.php">Login</a>
+					<a class="nav-link" href="login.php">Login</a>
+					<!-- <a class="nav-link" href="logout.php">Logout</a> -->
+
         </li>
       </ul>
+			<?php } ?>
+			<?php if(!empty($_SESSION['email'])){ ?>
+			<ul class="navbar-nav">
+			<li class="nav-item">
+				<!-- <a class="nav-link" href="login.php">Login</a> -->
+
+				<p>Hello, <?php echo $_SESSION['first_name']; ?> <a class="nav-link" href="logout.php">Logout</a>
+
+			</li>
+		</ul>
+	<?php } ?>
       </div>
     </div>
+
   </nav>
 
   <main class="container">

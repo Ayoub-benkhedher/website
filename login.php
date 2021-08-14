@@ -1,22 +1,21 @@
 <?php
 
 session_start();
-
 	include("connection.php");
 	include("functions.php");
-
+	// echo("<script>console.log('PHP: test login page');</script>");
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		//something was posted
-		$user_name = $_POST['user_name'];
-		// echo $user_name;
+		$email = $_POST['email'];
+		// echo $email;
 		$password = $_POST['password'];
 		// echo $password;
-		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
+		if(!empty($email) && !empty($password) && !is_numeric($email))
 		{
 
 			//read from database
-			$query = "select * from users where user_name = '$user_name' and password = '$password' limit 1";
+			$query = "select * from users where email = '$email' and password = '$password' limit 1";
 			$result = mysqli_query($conn, $query);
 
 			if($result)
@@ -24,13 +23,14 @@ session_start();
 				if($result && mysqli_num_rows($result) > 0)
 				{
 					$user_data = mysqli_fetch_assoc($result);
-					$_SESSION['user_id'] = $user_data['user_id'];
+					$_SESSION['email'] = $user_data['email'];
+					$_SESSION['first_name'] = $user_data['first_name'];
 					header("Location: index.php");
 					die;
 
 					if($user_data['password'] === $password)
 					{
-						$_SESSION['user_id'] = $user_data['user_id'];
+						$_SESSION['email'] = $user_data['email'];
 						header("Location: index.php");
 						die;
 					}
@@ -40,13 +40,13 @@ session_start();
 				//
 				// }
 			}
-			echo '<span style="color:red;">wrong username or password!</span>';
+			echo '<span style="color:red;">wrong email or password!</span>';
 			//
-			// echo "wrong username or password!";
+			// echo "wrong email or password!";
 		}else
 		{
-			echo '<span style="color:red;">wrong username or password!</span>';
-			// echo "wrong username or password!";
+			echo '<span style="color:red;">wrong email or password!</span>';
+			// echo "wrong email or password!";
 		}
 	}
 
@@ -131,7 +131,7 @@ session_start();
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username" name="user_name">
+						<input type="text" class="form-control" placeholder="email" name="email">
 
 					</div>
 					<div class="input-group form-group">

@@ -2,12 +2,11 @@
 
 function check_login($conn)
 {
-
-	if(isset($_SESSION['user_id']))
+	if(isset($_SESSION['email']))
 	{
 
-		$id = $_SESSION['user_id'];
-		$query = "select * from users where user_id = '$id' limit 1";
+		$em = $_SESSION['email'];
+		$query = "select * from users where email = '$em' limit 1";
 
 		$result = mysqli_query($conn,$query);
 		if($result && mysqli_num_rows($result) > 0)
@@ -24,22 +23,24 @@ function check_login($conn)
 
 }
 
-function random_num($length)
-{
 
-	$text = "";
-	if($length < 5)
-	{
-		$length = 5;
-	}
-
-	$len = rand(4,$length);
-
-	for ($i=0; $i < $len; $i++) {
-		# code...
-
-		$text .= rand(0,9);
-	}
-
-	return $text;
-}
+// function random_num($length)
+// {
+//
+// 	$text = "";
+// 	if($length < 5)
+// 	{
+// 		$length = 5;
+// 	}
+//
+// 	$len = rand(4,$length);
+//
+// 	for ($i=0; $i < $len; $i++) {
+// 		# code...
+//
+// 		$text .= rand(0,9);
+// 	}
+//
+// 	return $text;
+// }
+?>

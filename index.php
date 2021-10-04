@@ -42,7 +42,7 @@ session_start();
               Produce
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Fruits</a></li>
+              <li><a class="dropdown-item" href="fruit.php">Fruits</a></li>
               <li><a class="dropdown-item" href="#">Vegetables</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Show all</a></li>
